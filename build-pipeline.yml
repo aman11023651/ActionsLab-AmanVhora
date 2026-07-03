@@ -1,0 +1,43 @@
+name: Build and Test Pipeline - Aman Vhora
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Starting build
+        run: echo "Starting build process..."
+
+      - name: Simulate compilation
+        run: sleep 3
+
+      - name: Build done
+        run: echo "Build completed successfully"
+
+      - name: Credit
+        run: echo "Built by Aman Vhora"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Starting tests
+        run: echo "Running automated tests..."
+
+      - name: Simulate test run
+        run: sleep 2
+
+      - name: Show date
+        run: date
+
+      - name: Tests done
+        run: echo "All tests passed for Aman Vhora"
